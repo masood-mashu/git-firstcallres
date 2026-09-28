@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "fcr_eligibility_calculator",
+  "description": "Calculates whether a ticket qualifies as First-Call Resolution based on agent message and reopen count",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "ticket_stats_json": {
+        "type": "string",
+        "description": "JSON string containing agent_replies_count and was_reopened (bool)"
+      }
+    },
+    "required": [
+      "ticket_stats_json"
+    ]
+  },
+  "returns": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      }
+    }
+  }
+}

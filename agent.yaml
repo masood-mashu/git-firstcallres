@@ -1,0 +1,39 @@
+spec_version: "0.1.0"
+name: git-firstcallres
+version: 1.0.0
+description: "Autonomous Support First-Call Resolution (FCR), Knowledge Base Gap & Repeat Contact Agent"
+author: "masood-mashu"
+license: "Apache-2.0"
+
+model:
+  preferred: "openai:gpt-4o"
+  fallback:
+    - "anthropic:claude-3-5-sonnet"
+    - "openai:gpt-4o-mini"
+  constraints:
+    temperature: 0.1
+    max_tokens: 4096
+
+skills:
+  - fcr-support-auditing
+  - knowledge-base-gap-analysis
+
+tools:
+  - fcr-eligibility-calculator
+  - repeat-contact-detector
+  - kb-article-matcher
+
+runtime:
+  max_turns: 50
+  timeout: 120
+
+tags:
+  - customer-support
+  - fcr
+  - knowledge-base
+  - repeat-contact
+  - passport-challenge
+
+metadata:
+  passport_id: "aps-firstcallres-01"
+  passport_category: "Customer support"

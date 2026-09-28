@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "kb_article_matcher",
+  "description": "Checks if an incoming ticket issue category has an active, verified knowledge base article",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "issue_category": {
+        "type": "string",
+        "description": "Standardized ticket issue category string"
+      }
+    },
+    "required": [
+      "issue_category"
+    ]
+  },
+  "returns": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      }
+    }
+  }
+}

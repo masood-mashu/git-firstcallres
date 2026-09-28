@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "repeat_contact_detector",
+  "description": "Detects whether customer created a secondary inquiry within 72 hours of ticket closure",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "hours_since_closure": {
+        "type": "string",
+        "description": "Number of hours elapsed between prior ticket closure and new ticket creation"
+      }
+    },
+    "required": [
+      "hours_since_closure"
+    ]
+  },
+  "returns": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      }
+    }
+  }
+}
